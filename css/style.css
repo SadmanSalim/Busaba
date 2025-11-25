@@ -254,9 +254,8 @@
 .main-header .main-box .logo-box .logo img{
   position: relative;
   display: block;
-  height: 200px;
+  max-width: 200px;
   z-index: 1;
-  margin-top: -80px;
 }
 
 .main-header .nav-box{
@@ -1561,7 +1560,7 @@ body.visible-sidebar{
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 25px;
+  gap: 10px;
 }
 
 .banner-social-list .custom-ul li {
@@ -1569,7 +1568,6 @@ body.visible-sidebar{
   font-size: 14px;
   color: var(--white-color);
   padding: 0 5px;
-  transform: rotate(-90deg);
   transform-origin: center center;
 }
 
@@ -1986,7 +1984,7 @@ body.visible-sidebar{
 }
 
 .about-section .title-box h2 {
-  font-size: 70px;
+  font-size: 50px;
 }
 
 .about-section .title-box h2 img{
@@ -2681,9 +2679,7 @@ body.visible-sidebar{
   padding: 65px;
 }
 
-.offer-block-two.rounded .inner-box{
-  border-radius: 500px;
-}
+
 
 .offer-block-two .inner-box .image{
   position: relative;
@@ -2704,9 +2700,7 @@ body.visible-sidebar{
   border-radius: 500px;
 }
 
-.offer-block-two .inner-box:hover .image img{
-  transform: rotate(90deg);
-}
+
 
 .offer-block-two .cat-name{
   position: relative;

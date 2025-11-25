@@ -190,34 +190,38 @@ if($('.main-header').length){
 
 	//Dish Gallery Carousel
 	if ($('.dish-gallery-slider').length) {
-		$('.dish-gallery-slider').owlCarousel({
-			loop:true,
-			margin:45,
-			nav:true,
-			smartSpeed: 700,
-			autoplay: true,
-			autoplayTimeout:7000,
-			navText: [ '<span class="icon fa-light fa-angle-left"></span>', '<span class="icon fa-light fa-angle-right"></span>' ],
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:2
-				},
-				768:{
-					items:2,
-					margin:30
-				},
-				992:{
-					items:3,
-					margin:30
-				},
-				1200:{
-					items:3
-				}
-			}
-		});    		
+		$(".dish-gallery-slider").owlCarousel({
+      loop: true,
+      margin: 45,
+      nav: true,
+      smartSpeed: 700,
+      autoHeight: false,
+      autoplay: false,
+      autoplayTimeout: 7000,
+      navText: [
+        '<span class="icon fa-light fa-angle-left"></span>',
+        '<span class="icon fa-light fa-angle-right"></span>',
+      ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 2,
+        },
+        768: {
+          items: 2,
+          margin: 30,
+        },
+        992: {
+          items: 3,
+          margin: 30,
+        },
+        1200: {
+          items: 3,
+        },
+      },
+    });    		
 	}
 
 	//Testimonials Carousel
