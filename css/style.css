@@ -198,8 +198,12 @@
   /*top: 0;*/
   /*background: #202020;
   border-bottom-color: rgba(0,0,0,0.15);*/
+  -webkit-backdrop-filter: blur(9px);
   backdrop-filter: blur(9px);
-    background-color: #152c29b4;
+  /* visible dark background when header becomes fixed */
+  background-color: rgba(0,0,0,0.95);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  transition: background-color 250ms ease, padding 250ms ease, box-shadow 250ms ease;
 }
 
 .header-two.fixed-header .header-upper{
@@ -382,6 +386,22 @@
   -ms-transition:all 300ms ease;
   -o-transition:all 300ms ease;
   transition:all 300ms ease;
+}
+
+/* Nav link color when header is fixed (sticky) */
+.fixed-header .main-menu .navigation > li > a{
+  color: #ffffff; /* light links on dark sticky background */
+}
+
+.fixed-header .main-menu .navigation > li:hover > a,
+.fixed-header .main-menu .navigation > li.current > a,
+.fixed-header .main-menu .navigation > li.current-menu-item > a{
+  color: var(--main-color);
+}
+
+.fixed-header .main-box .logo-box .logo img{
+  /* ensure logo remains visible on light background; if you use a white logo, replace with dark version */
+  filter: none;
 }
 
 .main-menu .navigation > li.dropdown{
@@ -1535,7 +1555,7 @@ body.visible-sidebar{
 /* Parent container to position it inside the banner */
 .banner-section .banner-social-list {
   position: absolute;
-  left: 30px; /* adjust as needed */
+  left: 60px; /* adjust as needed */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -1598,7 +1618,7 @@ body.visible-sidebar{
 /* Container positioning */
 .banner-section .banner-call {
   position: absolute;
-  right: -50px;
+  right: -25px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
