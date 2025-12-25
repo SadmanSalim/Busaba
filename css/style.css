@@ -4573,6 +4573,15 @@ body.visible-sidebar{
   order: 4;
 }
 
+/* Desktop: move the info column (logo/visit-us) to the first position */
+@media (min-width: 992px) {
+  .main-footer .info-col{
+    order: -1; /* show first in the row on large screens */
+    text-align: left; /* optional: keep logo/addresses left-aligned on desktop */
+  }
+  .main-footer .footer-col{ text-align: left; }
+}
+
 .main-footer .footer-image-col .inner{
   position: relative;
   text-align: center;
