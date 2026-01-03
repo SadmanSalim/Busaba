@@ -2,7 +2,20 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap'););
+
+/* Ahganirya custom font - place font files in `fonts/` folder with these names
+   If you have webfonts, add `Ahganirya.woff2` and `Ahganirya.woff` for best results. */
+@font-face {
+    font-family: 'Ahganirya';
+    src: url('../fonts/Ahganirya.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Utility class to apply the Ahganirya font where needed */
+.ahganirya { font-family: 'Ahganirya', var(--font-family-Urbanist); }
 
 /*
     font-family: "Fraunces", serif;

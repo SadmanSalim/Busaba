@@ -1753,10 +1753,11 @@ body.visible-sidebar{
 
 .banner-text-top h1 {
   margin-bottom: 15px;
-  font-size: 90px;
+  font-size: 50px;
   font-weight:300;
-  line-height:1.0em;
+  line-height:2em;
   padding-bottom: 10px;
+  font-family: 'Ahganirya';
 }
 
 .banner-text-top .text {
@@ -1848,6 +1849,9 @@ body.visible-sidebar{
 .title-box h2{
   position: relative;
   margin-bottom: 0;
+  font-size: 20px;
+  margin-top: 5px;
+  font-family: 'Ahganirya';
 }
 
 .title-box h3{
@@ -2066,7 +2070,9 @@ body.visible-sidebar{
 }
 
 .about-section .title-box h2 {
-  font-size: 50px;
+  margin-top: 10px;
+  font-size: 40px;
+  font-family: 'Ahganirya';
 }
 
 .about-section .title-box h2 img{
