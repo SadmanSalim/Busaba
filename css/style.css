@@ -4528,7 +4528,6 @@ body.visible-sidebar{
 
 .main-footer .upper-section .row {
     display: flex;
-    align-items: center; /* vertically center columns */
     flex-wrap: wrap;     /* keep responsiveness for smaller screens */
 }
 
