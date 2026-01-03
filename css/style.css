@@ -6317,7 +6317,7 @@ footer .bottom_footer .social_media li a:hover {
 .menu-card-style .menu-col .dish-block .desc{
   position: relative;
   font-size: 15px;
-  color: var(--color-one);
+  color: #fff;
   max-width: 350px;
 }
 
