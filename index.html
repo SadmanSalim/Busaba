@@ -2636,13 +2636,13 @@
                     <h2>Latest Blog</h2>
                 </div>
 
-                <!-- Featured Editor Video -->
+                <!-- Featured Editor Video (thumbnail -> click to play) -->
                 <div
                     style="max-width: 900px; margin: 0 auto 50px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(201, 169, 98, 0.3);">
-                    <video controls poster="./images/thum.webp" style="width: 100%; height: 500px; object-fit: cover;">
-                        <source src="./images/menu.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <a href="#" class="js-video-thumb" data-video-src="./images/menu.mp4" data-poster="./images/thum.webp" style="display:block; position:relative;">
+                        <img src="./images/thumb.avif" alt="Editor's Special" style="width:100%; height:auto;display:block;">
+                        <span class="play-overlay"><i class="fa fa-play"></i></span>
+                    </a>
                     <div style="background: #1a1512; padding: 40px; text-align: center;">
                         <span
                             style="background: #c9a962; color: #1a1a1a; padding: 5px 15px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px;">Featured
@@ -2847,6 +2847,61 @@
         $(document).ready(function(){ initBuffetFancybox(); });
         var resizeTimer; window.addEventListener('resize', function(){ clearTimeout(resizeTimer); resizeTimer = setTimeout(initBuffetFancybox, 200); });
     })();
+
+    /*
+        Video thumbnail -> modal player
+        Replaces an inline video tag with a clickable thumbnail. When clicked,
+        a lightweight modal is created and an HTML5 video element is inserted.
+        This preserves the original aspect ratio and works for local MP4 files.
+    */
+    (function(){
+        function openVideoModal(src, poster){
+            if(!src) return;
+            var overlay = document.createElement('div');
+            overlay.className = 'video-overlay';
+            overlay.innerHTML = '<div class="video-wrap">'
+                + '<button class="video-close" aria-label="Close video">&times;</button>'
+                + '<video controls autoplay playsinline preload="auto" src="'+src+'" '
+                + (poster?('poster="'+poster+'"'):'') + '></video>'
+                + '</div>';
+            document.body.appendChild(overlay);
+            var closeBtn = overlay.querySelector('.video-close');
+            var videoEl = overlay.querySelector('video');
+
+            // constrain video to viewport and update on resize
+            function updateVideoSize(){
+                if(!videoEl) return;
+                var maxH = Math.floor(window.innerHeight * 0.9);
+                videoEl.style.maxHeight = maxH + 'px';
+                videoEl.style.width = 'auto';
+                videoEl.style.display = 'block';
+                videoEl.style.margin = '0 auto';
+            }
+
+            updateVideoSize();
+            var resizeHandler = function(){ updateVideoSize(); };
+            window.addEventListener('resize', resizeHandler);
+
+            function cleanup(){
+                if(videoEl){ try{ videoEl.pause(); videoEl.src = ''; }catch(e){} }
+                window.removeEventListener('resize', resizeHandler);
+                overlay.remove();
+            }
+
+            closeBtn.addEventListener('click', cleanup);
+            overlay.addEventListener('click', function(e){ if(e.target === overlay) cleanup(); });
+        }
+
+        document.addEventListener('click', function(e){
+            var btn = e.target.closest('.js-video-thumb');
+            if(!btn) return;
+            e.preventDefault();
+            var src = btn.getAttribute('data-video-src');
+            var poster = btn.getAttribute('data-poster');
+            openVideoModal(src, poster);
+        });
+    })();
+
     function showMenuTab(tabName){
         document.getElementById('continental-menu').style.display='none';
         document.getElementById('thai-menu').style.display='none';
