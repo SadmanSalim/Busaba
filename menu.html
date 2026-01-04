@@ -1825,5 +1825,21 @@
 <script src="js/appear.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/custom-script.js"></script>
+<script>
+    function showMenuTab(tabName){
+        document.getElementById('continental-menu').style.display='none';
+        document.getElementById('thai-menu').style.display='none';
+        document.getElementById(tabName+'-menu').style.display='block';
+        var buttons=document.querySelectorAll('.menu-tab-btn');
+        buttons.forEach(function(btn){
+            btn.classList.remove('active');
+            btn.classList.remove('btn-style-one');
+            btn.classList.add('btn-style-two');
+        });
+        event.target.closest('.menu-tab-btn').classList.add('active');
+        event.target.closest('.menu-tab-btn').classList.remove('btn-style-two');
+        event.target.closest('.menu-tab-btn').classList.add('btn-style-one');
+    }
+    </script>
 </body>
 </html>
