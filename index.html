@@ -10,6 +10,7 @@
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
@@ -483,20 +484,26 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="image" style="margin-bottom: 30px;">
-                                    <img src="images/resource/buffet-1.jpg" alt="Busaba Party Setup"
-                                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+                                        <a href="images/resource/buffet-1.jpg" data-fancybox="buffet" data-caption="Busaba Party Setup">
+                                            <img src="images/resource/buffet-1.jpg" alt="Busaba Party Setup"
+                                                style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px; cursor: zoom-in;">
+                                        </a>
+                                    </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="image" style="margin-bottom: 30px;">
+                                    <a href="images/resource/buffet-2.jpg" data-fancybox="buffet" data-caption="Busaba Buffet Spread">
+                                        <img src="images/resource/buffet-2.jpg" alt="Busaba Buffet Spread"
+                                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px; cursor: zoom-in;">
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="image" style="margin-bottom: 30px;">
-                                    <img src="images/resource/buffet-2.jpg" alt="Busaba Buffet Spread"
-                                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="image" style="margin-bottom: 30px;">
-                                    <img src="images/resource/buffet-3.jpg" alt="Busaba Event Dining"
-                                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+                                    <a href="images/resource/buffet-3.jpg" data-fancybox="buffet" data-caption="Busaba Event Dining">
+                                        <img src="images/resource/buffet-3.jpg" alt="Busaba Event Dining"
+                                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px; cursor: zoom-in;">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -2268,7 +2275,7 @@
                     </div>
                 </div>
 
-                <img src="./images/buffet-menu.jpg" class="img-fluid" alt="buffet">
+                <a href="images/buffet-menu.jpg" data-fancybox="buffet-party" data-caption="Busaba Buffet Setup"><img src="./images/buffet-menu.jpg" class="img-fluid" alt="buffet"></a>
 
                 <div style="background: #1a1512; padding: 40px; border-radius: 20px; border: 2px solid #c9a962; text-align: center; margin-top: 50px;">
                     <h3 style="color: #fff; font-size: 32px; margin-bottom: 20px;">Reserve Your Party Today!</h3>
@@ -2725,6 +2732,38 @@
 
 
     <script>
+    // Initialize Fancybox for buffet images only on responsive (<= 991px)
+    (function(){
+        function initBuffetFancybox(){
+            var isMobile = window.innerWidth <= 991;
+            if(typeof $.fancybox === 'undefined') return;
+            // Destroy existing fancybox on these selectors to avoid double-init
+            try{ $('[data-fancybox="buffet"]').off('click.fb-start'); }catch(e){}
+            if(isMobile){
+                $('[data-fancybox="buffet"]').fancybox({
+                    loop: false,
+                    protect: true,
+                    buttons: [
+                        'zoom',
+                        'fullScreen',
+                        'close'
+                    ],
+                    animationEffect: 'zoom',
+                    transitionEffect: 'fade'
+                });
+            } else {
+                // On larger screens, make images open in a new tab instead of fancybox
+                $('[data-fancybox="buffet"]').off('click').on('click', function(e){
+                    e.preventDefault();
+                    var href = $(this).attr('href');
+                    window.open(href, '_blank');
+                });
+            }
+        }
+        // init on load and on resize (debounced)
+        $(document).ready(function(){ initBuffetFancybox(); });
+        var resizeTimer; window.addEventListener('resize', function(){ clearTimeout(resizeTimer); resizeTimer = setTimeout(initBuffetFancybox, 200); });
+    })();
     function showMenuTab(tabName){
         document.getElementById('continental-menu').style.display='none';
         document.getElementById('thai-menu').style.display='none';
