@@ -1857,6 +1857,7 @@ body.visible-sidebar{
 
 .title-box h3{
   position: relative;
+  font-weight: 500;
   margin-bottom: 0;
 }
 
@@ -2808,21 +2809,16 @@ body.visible-sidebar{
   line-height: 24px;
   margin-bottom: 10px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-tabs .dish-block .title .menu-list-line {
-  flex-grow: 1;
-  margin-left: 15px;
-  margin-right: 15px;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--white-color-opacity-three);
-  height: 17px;
+  display: none;
 }
 
 .menu-tabs .dish-block .title .ttl{
   position: relative;
-  float: left;
   padding-right: 10px;
   text-transform: capitalize;
 }
@@ -2849,16 +2845,18 @@ body.visible-sidebar{
 
 .menu-tabs .dish-block .title .price{
   position: relative;
-  float: right;
   font-size: 16px;
   color: var(--main-color);
   padding-left: 5px;
+  margin-left: auto;
+  text-align: right;
 }
 
 .menu-tabs .dish-block .desc{
   position: relative;
   font-size: 15px;
   color: var(--color-three);
+  font-style: italic;
 }
 
 .menu-tabs .dish-block .desc a{
@@ -6174,22 +6172,17 @@ footer .bottom_footer .social_media li a:hover {
   margin-bottom: 10px;
   font-family:var(--font-family-Fraunces);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-one .menu-col .dish-block .title .ttl{
   position: relative;
-  float: left;
   text-transform: capitalize;
 }
 
 .menu-one .menu-col .dish-block .title .menu-list-line {
-  flex-grow: 1;
-  margin-left: 15px;
-  margin-right: 15px;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--white-color-opacity-three);
-  height: 17px;
+  display: none;
 }
 
 .menu-one .menu-col .dish-block .title .ttl a{
@@ -6214,10 +6207,11 @@ footer .bottom_footer .social_media li a:hover {
 
 .menu-one .menu-col .dish-block .title .price{
   position: relative;
-  float: right;
   font-size: 16px;
   color: var(--main-color);
   font-family: var(--font-family-Urbanist);
+  margin-left: auto;
+  text-align: right;
 }
 
 .menu-one .menu-col .dish-block .desc{
@@ -6225,6 +6219,7 @@ footer .bottom_footer .social_media li a:hover {
   font-size: 15px;
   color: var(--color-one);
   max-width: 430px;
+  font-style: italic;
 }
 
 .menu-one .menu-col .dish-block .desc a{
@@ -6415,22 +6410,16 @@ footer .bottom_footer .social_media li a:hover {
   line-height: 24px;
   margin-bottom: 5px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-card-style .menu-col .dish-block .title .menu-list-line {
-  flex-grow: 1;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--white-color-opacity-three);
-  height: 17px;
-
+  display: none;
 }
 
 .menu-card-style .menu-col .dish-block .title .ttl{
   position: relative;
-  float: left;
   text-transform: capitalize;
 }
 
@@ -6456,10 +6445,11 @@ footer .bottom_footer .social_media li a:hover {
 
 .menu-card-style .menu-col .dish-block .title .price{
   position: relative;
-  float: right;
   font-size: 16px;
   color: var(--main-color);
   font-family: var(--font-family-Urbanist);
+  margin-left: auto;
+  text-align: right;
 }
 
 .menu-card-style .menu-col .dish-block .desc{
@@ -6467,6 +6457,7 @@ footer .bottom_footer .social_media li a:hover {
   font-size: 15px;
   color: #fff;
   max-width: 350px;
+  font-style: italic;
 }
 
 .menu-card-style .menu-col .dish-block .desc a{
@@ -6818,21 +6809,16 @@ footer .bottom_footer .social_media li a:hover {
   line-height: 24px;
   margin-bottom: 10px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-two .dish-block .title .menu-list-line {
-  flex-grow: 1;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--white-color-opacity-three);
-  height: 17px;
+  display: none;
 }
 
 .menu-two .dish-block .title .ttl{
   position: relative;
-  float: left;
   padding-right: 5px;
   text-transform: capitalize;
 }
@@ -6859,16 +6845,18 @@ footer .bottom_footer .social_media li a:hover {
 
 .menu-two .dish-block .title .price{
   position: relative;
-  float: right;
   font-size: 16px;
   color: var(--main-color);
   padding-left: 5px;
+  margin-left: auto;
+  text-align: right;
 }
 
 .menu-two .dish-block .desc{
   position: relative;
   font-size: 15px;
   color: var(--color-one);
+  font-style: italic;
 }
 
 .menu-two .dish-block .desc a{

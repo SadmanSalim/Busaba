@@ -300,11 +300,12 @@
 		flex-shrink: 0 !important;
 		min-width: fit-content !important;
 		font-size: 15px !important;
-		margin-left: 0 !important;
+		margin-left: auto !important;
 		padding-left: 0 !important;
 		line-height: 1.2 !important;
 		word-break: keep-all !important;
 		overflow: visible !important;
+		text-align: right !important;
 	}
 
 	.menu-card-style .menu-col .dish-block .title .price span,
@@ -321,8 +322,7 @@
 	.menu-one .menu-col .dish-block .title .menu-list-line,
 	.menu-tabs .dish-block .title .menu-list-line,
 	.menu-two .dish-block .title .menu-list-line{
-		flex-shrink: 1;
-		min-width: 10px;
+		display: none;
 	}
 
 	.menu-card-style .menu-col .dish-block .title .ttl,
@@ -1728,8 +1728,7 @@
 	.menu-one .menu-col .dish-block .title .menu-list-line,
 	.menu-tabs .dish-block .title .menu-list-line,
 	.menu-two .dish-block .title .menu-list-line{
-		flex-shrink: 1;
-		min-width: 10px;
+		display: none;
 	}
 
 	.menu-card-style .menu-col .dish-block .title .ttl,
@@ -1790,7 +1789,8 @@
 		white-space: nowrap !important;
 		flex-shrink: 0 !important;
 		min-width: fit-content !important;
-		margin-left: 5px;
+		margin-left: auto !important;
+		text-align: right !important;
 	}
 
 	.menu-card-style .menu-col .dish-block .title .price span,
@@ -1830,6 +1830,8 @@
 		white-space: nowrap;
 		flex-shrink: 0;
 		min-width: fit-content;
+		margin-left: auto;
+		text-align: right;
 	}
 
 	.menu-card-style .menu-col .dish-block .title .price span,
